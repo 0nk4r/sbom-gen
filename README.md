@@ -9,13 +9,10 @@
 
 ---
 
-##  Features
-
 * Generate SBOM from your local codebase using Syft.
 * Fetch SBOM from GitHub using REST API.
-* Process a single GitHub repo or batch from a CSV file.
+* Process a single GitHub repo or from a file.
 * Output saved in SPDX JSON format.
-* Rich terminal UI with themes and error handling.
 
 ---
 
@@ -48,22 +45,14 @@ python sbomgen.py --local
 ###  Fetch SBOM for a Single GitHub Repo
 
 ```bash
-python sbomgen.py --online --repo onkark/sample-app --token YOUR_GITHUB_TOKEN
+python sbomgen.py --online --repo https://github.com/0nk4r/sbom-gen --token YOUR_GITHUB_TOKEN
 ```
 
-###  Fetch SBOM for Multiple Repos via CSV
+###  Fetch SBOM for Multiple Repos 
 
-**Format your CSV like this (no header):**
-
-```
-onkark/repo1
-someorg/repo2
-```
-
-**Then run:**
 
 ```bash
-python sbomgen.py --online --file repos.csv --token YOUR_GITHUB_TOKEN
+python sbomgen.py --online --file repos.txt --token YOUR_GITHUB_TOKEN
 ```
 
 All SBOM files are saved to the `sboms/` directory.
@@ -96,30 +85,3 @@ export GITHUB_TOKEN=YOUR_GITHUB_TOKEN
 * Example: `sboms/onkark_sample-app_sbom.json`
 
 ---
-
-##  Requirements File (optional)
-
-If you're using `rich`, add this to `requirements.txt`:
-
-```
-rich
-requests
-```
-
----
-
-##  License
-
-MIT License
-
----
-
-##  Contribution
-
-PRs and issues welcome! Help make SBOMGen more powerful and developer-friendly.
-
----
-
-##  Author
-
-Created by [OnkarK](https://onkark.com)
